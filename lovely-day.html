@@ -1,0 +1,50 @@
+<!-- document.getElementById("go").onclick = go;
+function go(){
+    var target = document.getElementById("unblock").value;
+    if(target.length < 1){
+        alert("You need a longer link!"); return;
+    }
+    else{
+        document.body.innerHTML = '<iframe src='+target+'></iframe>'
+    }
+
+
+}-->
+<html>
+<head>
+</head>
+<body>
+<style>
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+iframe{
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+</style>
+<input id="unblock" placeholder="Enter URL"/>
+<button id="go">Submit</button>
+<script>
+/* Assign your input and result elements to variables using their ids */
+var input = document.getElementById("unblock");
+var result = document.getElementById("go");
+
+/* Set the `oninput` value to a function that updates the inner html of the result element */
+
+input.oninput = function() {
+        document.body.innerHTML = '<a onclick='location.replace("https://itsforthehomies.herokuapp.com/proxy/"+ input.value;);'>Test</a>';
+
+  /*result.innerHTML = "https://itsforthehomies.herokuapp.com/proxy/"+ input.value;*/
+}
+</script>
+</body>
+</html>
